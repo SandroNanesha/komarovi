@@ -1,26 +1,95 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-background: #fbf9f8;
+  --color-foreground: #1b1c1c;
+  --color-surface: #fbf9f8;
+  --color-surface-dim: #dcd9d9;
+  --color-surface-bright: #fbf9f8;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f6f3f2;
+  --color-surface-container: #f0eded;
+  --color-surface-container-high: #eae8e7;
+  --color-surface-container-highest: #e4e2e1;
+  --color-on-surface: #1b1c1c;
+  --color-on-surface-variant: #404751;
+  --color-surface-variant: #e4e2e1;
+  --color-primary: #00619d;
+  --color-primary-container: #0f7bc2;
+  --color-on-primary: #ffffff;
+  --color-on-primary-container: #ffffff;
+  --color-secondary: #a83729;
+  --color-secondary-container: #ff7764;
+  --color-on-secondary: #ffffff;
+  --color-on-secondary-container: #710e07;
+  --color-tertiary: #5e5d5d;
+  --color-tertiary-container: #777676;
+  --color-on-tertiary: #ffffff;
+  --color-on-tertiary-container: #ffffff;
+  --color-error: #ba1a1a;
+  --color-error-container: #ffdad6;
+  --color-on-error: #ffffff;
+  --color-on-error-container: #93000a;
+  --color-outline: #707882;
+  --color-outline-variant: #c0c7d2;
+  --color-inverse-surface: #303030;
+  --color-inverse-on-surface: #f3f0f0;
+  --color-inverse-primary: #9acbff;
+  --color-surface-tint: #00629e;
+  --color-primary-fixed: #cfe5ff;
+  --color-primary-fixed-dim: #9acbff;
+  --color-on-primary-fixed: #001d34;
+  --color-on-primary-fixed-variant: #004a78;
+  --color-secondary-fixed: #ffdad4;
+  --color-secondary-fixed-dim: #ffb4a8;
+  --color-on-secondary-fixed: #410000;
+  --color-on-secondary-fixed-variant: #871f15;
+  --color-tertiary-fixed: #e4e2e1;
+  --color-tertiary-fixed-dim: #c8c6c6;
+  --color-on-tertiary-fixed: #1b1c1c;
+  --color-on-tertiary-fixed-variant: #474747;
+
+  --font-sans: "Inter", "Noto Sans Georgian", system-ui, -apple-system, sans-serif;
+  --font-headline: "Inter", "Noto Sans Georgian", system-ui, sans-serif;
+  --font-body: "Inter", "Noto Sans Georgian", system-ui, sans-serif;
+  --font-label: "Inter", "Noto Sans Georgian", system-ui, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-background);
+  color: var(--color-on-surface);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: var(--color-primary-fixed);
+  color: var(--color-on-primary-fixed);
+}
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+}
+
+.text-huge {
+  font-size: clamp(4rem, 15vw, 12rem);
+  line-height: 0.85;
+}
+
+.bg-grid-subtle {
+  background-image: linear-gradient(to right, #c0c7d2 1px, transparent 1px),
+    linear-gradient(to bottom, #c0c7d2 1px, transparent 1px);
+  background-size: 40px 40px;
+  opacity: 0.05;
+}
+
+.grid-overlay {
+  background-image: linear-gradient(#404751 1px, transparent 1px),
+    linear-gradient(90deg, #404751 1px, transparent 1px);
+  background-size: 100px 100px;
 }
